@@ -5,10 +5,10 @@
         "homepage": "https://cachix.org",
         "owner": "cachix",
         "repo": "cachix",
-        "rev": "0831dc19202b6e17898ce4fec7029ac9a74b84ce",
-        "sha256": "0q3z0m9nd79y8fbks29kx8ir4yqn27j8hwvzznrm03gff8wcni5n",
+        "rev": "de2c6559e364d2684f9858337948874a0d564718",
+        "sha256": "11nga1xg82x9s85cc0zzgjl55ls7p4vn0h5rvnl588v8z36mamw8",
         "type": "tarball",
-        "url": "https://github.com/cachix/cachix/archive/0831dc19202b6e17898ce4fec7029ac9a74b84ce.tar.gz",
+        "url": "https://github.com/cachix/cachix/archive/de2c6559e364d2684f9858337948874a0d564718.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "cargo-release": {
@@ -17,22 +17,22 @@
         "homepage": "",
         "owner": "sunng87",
         "repo": "cargo-release",
-        "rev": "903dd91119d8557bdbc9e475f11b170ab669ff86",
-        "sha256": "1ngab955vkiysw90g3s8yrkhb68cq2d32yri8y5vsa9d6p8wla8l",
+        "rev": "7fdaf7334f2ade5953d2a5b3f506866fc1c98da4",
+        "sha256": "117ag17apj70cbhc455fc7yn5qrgnh9x1wfwdgjlhvw12mx9a4qg",
         "type": "tarball",
-        "url": "https://github.com/sunng87/cargo-release/archive/903dd91119d8557bdbc9e475f11b170ab669ff86.tar.gz",
+        "url": "https://github.com/sunng87/cargo-release/archive/7fdaf7334f2ade5953d2a5b3f506866fc1c98da4.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "crate2nix": {
-        "branch": "master",
+        "branch": "balsoft/fix-broken-ifd",
         "description": "nix build file generator for rust crates",
         "homepage": "",
-        "owner": "kolloch",
+        "owner": "balsoft",
         "repo": "crate2nix",
-        "rev": "a18488a2083c0148c07b874343701fdfec1cd2af",
-        "sha256": "0ygbgwgnnlhm5wpll7vjfxaww7j50faj8qg0nc8jvwmnr9iv2svw",
+        "rev": "c704f6a0a76684ad65f852393480f6777a87f7ff",
+        "sha256": "1bmz1qawih9s97bki5c5zrdjgad26yk6c60r5qh5pn31aybpmhgk",
         "type": "tarball",
-        "url": "https://github.com/kolloch/crate2nix/archive/a18488a2083c0148c07b874343701fdfec1cd2af.tar.gz",
+        "url": "https://github.com/balsoft/crate2nix/archive/c704f6a0a76684ad65f852393480f6777a87f7ff.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nix-test-runner": {
@@ -53,10 +53,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "bc9b956714ed6eac5f8888322aac5bc41389defa",
-        "sha256": "1wbd66h3hszlmdh0mpj0a51jk580aq2xal30wc0lgk78s6sf0rw7",
+        "rev": "e544ee88fa4590df75e221e645a03fe157a99e5b",
+        "sha256": "0j8pdr9ymk7a2p8pamcbq2rbhlcg923i6abdmdm6496973s5gb34",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/bc9b956714ed6eac5f8888322aac5bc41389defa.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs/archive/e544ee88fa4590df75e221e645a03fe157a99e5b.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs-mozilla": {
@@ -65,10 +65,10 @@
         "homepage": null,
         "owner": "mozilla",
         "repo": "nixpkgs-mozilla",
-        "rev": "0510159186dd2ef46e5464484fbdf119393afa58",
-        "sha256": "1c6r5ldkh71v6acsfhni7f9sxvi7xrqzshcwd8w0hl2rrqyzi58w",
+        "rev": "15b7a05f20aab51c4ffbefddb1b448e862dccb7d",
+        "sha256": "0admybxrjan9a04wq54c3zykpw81sc1z1nqclm74a7pgjdp7iqv1",
         "type": "tarball",
-        "url": "https://github.com/mozilla/nixpkgs-mozilla/archive/0510159186dd2ef46e5464484fbdf119393afa58.tar.gz",
+        "url": "https://github.com/mozilla/nixpkgs-mozilla/archive/15b7a05f20aab51c4ffbefddb1b448e862dccb7d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

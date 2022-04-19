@@ -214,7 +214,11 @@ rec {
         crateBin = [
           { name = "codegen"; path = "src/main.rs"; }
         ];
-        src = lib.cleanSourceWith { filter = sourceFilter;  src = ./.; };
+        # We can't filter paths with references in Nix 2.4
+        # See https://github.com/NixOS/nix/issues/5410
+        src = if (lib.versionOlder builtins.nixVersion "2.4pre20211007")
+          then lib.cleanSourceWith { filter = sourceFilter;  src = ./.; }
+          else ./.;
         authors = [
           "Peter Kolloch <info@eigenvalue.net>"
         ];
@@ -238,7 +242,7 @@ rec {
         edition = "2018";
         workspace_member = null;
         src = pkgs.fetchgit {
-          url = "https://github.com/diwic/dbus-rs/";
+          url = "https://github.com/diwic/dbus-rs.git";
           rev = "b079366e27da1b9c2869f065fbb6004138e439c2";
           sha256 = "0lbp76vvi0cw57lxhfqmz22qd5l61w3rh8g58hhmwi8wcr9qmiiw";
         };
@@ -265,7 +269,7 @@ rec {
         crateBin = [];
         workspace_member = null;
         src = pkgs.fetchgit {
-          url = "https://github.com/diwic/dbus-rs/";
+          url = "https://github.com/diwic/dbus-rs.git";
           rev = "b079366e27da1b9c2869f065fbb6004138e439c2";
           sha256 = "0lbp76vvi0cw57lxhfqmz22qd5l61w3rh8g58hhmwi8wcr9qmiiw";
         };
@@ -309,7 +313,7 @@ rec {
         edition = "2015";
         workspace_member = null;
         src = pkgs.fetchgit {
-          url = "https://github.com/diwic/dbus-rs/";
+          url = "https://github.com/diwic/dbus-rs.git";
           rev = "b079366e27da1b9c2869f065fbb6004138e439c2";
           sha256 = "0lbp76vvi0cw57lxhfqmz22qd5l61w3rh8g58hhmwi8wcr9qmiiw";
         };
@@ -1022,15 +1026,14 @@ rec {
       dependencies;
 
   /* Returns whether the given feature should enable the given dependency. */
-  doesFeatureEnableDependency = { name, rename ? null, ... }: feature:
+  doesFeatureEnableDependency = dependency: feature:
     let
+      name = dependency.rename or dependency.name;
       prefix = "${name}/";
       len = builtins.stringLength prefix;
       startsWithPrefix = builtins.substring 0 len feature == prefix;
     in
-    (rename == null && feature == name)
-    || (rename != null && rename == feature)
-    || startsWithPrefix;
+    feature == name || startsWithPrefix;
 
   /* Returns the expanded features for the given inputFeatures by applying the
     rules in featureMap.
@@ -1065,7 +1068,9 @@ rec {
             let
               enabled = builtins.any (doesFeatureEnableDependency dependency) features;
             in
-            if (dependency.optional or false) && enabled then [ dependency.name ] else [ ]
+            if (dependency.optional or false) && enabled
+            then [ (dependency.rename or dependency.name) ]
+            else [ ]
         )
         dependencies;
     in
