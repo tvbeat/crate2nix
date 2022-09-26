@@ -15,7 +15,7 @@
       niv
       nix_2_3
       git
-      utillinux
+      util-linux
       cacert
       nix-prefetch-git
       ;
